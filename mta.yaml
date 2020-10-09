@@ -1,5 +1,5 @@
 ID: agencyportal
-_schema-version: "2.1"
+_schema-version: '2.1'
 version: 0.0.1
 modules:
   - name: agencyportal-db
@@ -10,20 +10,17 @@ modules:
       disk-quota: 512M
     requires:
       - name: agencyportal-db-hdi-container
-  - name: agencyportal-srv
+  - name: srv
     type: nodejs
     path: srv
-    parameters:
-      memory: 512M
-      disk-quota: 512M
     provides:
       - name: srv_api
         properties:
-          url: ${default-url}
+          url: '${default-url}'
     requires:
       - name: agencyportal-db-hdi-container
 resources:
   - name: agencyportal-db-hdi-container
     type: com.sap.xs.hdi-container
     properties:
-      hdi-container-name: ${service-name}
+      hdi-container-name: '${service-name}'

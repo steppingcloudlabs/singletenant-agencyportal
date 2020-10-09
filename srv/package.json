@@ -1,28 +1,20 @@
 {
-    "name": "agencyportal-srv",
-    "description": "Generated from ../package.json, do not change!",
-    "version": "1.0.0",
-    "dependencies": {
-        "@sap/cds": "^4.1.9",
-        "express": "^4.17.1",
-        "@sap/hana-client": "^2.6.54"
-    },
-    "engines": {
-        "node": "^10 || ^12"
-    },
-    "devDependencies": {},
-    "scripts": {
-        "postinstall": "npm dedupe && node .build.js",
-        "start": "node ./node_modules/@sap/cds/bin/cds.js serve gen/csn.json",
-        "watch": "nodemon -w . -i node_modules/**,.git/** -e cds -x npm run build"
-    },
-    "private": true,
-    "cds": {
-        "requires": {
-            "db": {
-                "kind": "hana",
-                "model": "gen/csn.json"
-            }
-        }
-    }
+  "dependencies": {},
+  "description": "my description",
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "jest-junit": "^5.2.0"
+  },
+  "files": [],
+  "main": "server.js",
+  "name": "srv",
+  "scripts": {
+    "test": "node node_modules/jest/bin/jest --config jest.json",
+    "test-coverage": "node node_modules/jest/bin/jest --coverage --config jest.json",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "version": "1.0.0"
 }
