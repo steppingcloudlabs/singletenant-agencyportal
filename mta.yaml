@@ -6,13 +6,16 @@ modules:
     type: hdb
     path: db
     parameters:
-      memory: 256M
-      disk-quota: 512M
+      memory: 150M
+      disk-quota: 800M
     requires:
       - name: agencyportal-db-hdi-container
   - name: srv
     type: nodejs
     path: srv
+    parameters:
+      memory: 150M
+      disk-quota: 800M
     provides:
       - name: srv_api
         properties:
